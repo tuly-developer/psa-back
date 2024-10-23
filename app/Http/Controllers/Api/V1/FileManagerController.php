@@ -25,7 +25,7 @@ class FileManagerController extends Controller
             'orderBy' => ['nullable', 'string'],
             'orderByMethod' => ['nullable', 'string'],
             'status' => ['nullable', 'int'],
-            'type' => ['nullable', 'int'],
+            'type' => ['required', 'int'],
             'date_from' => ['nullable', 'date'],
             'date_to' => ['nullable', 'date'],
         ]);

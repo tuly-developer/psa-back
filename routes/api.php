@@ -11,7 +11,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('login', AuthController::class);
 
-Route::prefix("v1")->group(function () {
+Route::middleware('auth:sanctum')->prefix("v1")->group(function () {
     Route::prefix("file-manager")->group(function () {
         Route::get('files', [FileManagerController::class, 'index']);
         Route::post('safit', [FileManagerController::class, 'processSafitFile']);
